@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
               Divider(),
               ListTile(
                 trailing: Icon(Icons.lock_outline),
-                title: Text('Hello world'),
+                title: Text('Log Out'),
                 onTap: () {},
               )
             ],
