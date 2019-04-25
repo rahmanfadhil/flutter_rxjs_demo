@@ -17,12 +17,12 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             trailing: Icon(Icons.list),
             title: Text('Manage Todos'),
-            onTap: () {},
+            onTap: () => Navigator.pushReplacementNamed(context, '/'),
           ),
           ListTile(
-            trailing: Icon(Icons.account_circle),
-            title: Text('My Account'),
-            onTap: () {},
+            trailing: Icon(Icons.add_alarm),
+            title: Text('Click Counter'),
+            onTap: () => Navigator.pushReplacementNamed(context, '/counter'),
           ),
           ListTile(
             trailing: Icon(Icons.settings),

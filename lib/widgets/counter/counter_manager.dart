@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './services/main.dart';
-import './services/counter_service.dart';
+import '../../services/main.dart';
+import '../../services/counter_service.dart';
 
 class CounterManager extends StatelessWidget {
   @override

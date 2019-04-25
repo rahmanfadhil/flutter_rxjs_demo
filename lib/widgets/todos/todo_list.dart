@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './services/main.dart';
-import './services/todo_service.dart';
+import '../../services/main.dart';
+import '../../services/todo_service.dart';
 
 class TodoList extends StatelessWidget {
   @override
