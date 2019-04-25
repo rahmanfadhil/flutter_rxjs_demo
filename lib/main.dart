@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './services/main.dart';
 import './counter_manager.dart';
+import './todos_manager.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
           title: Text('Inherited Widget'),
         ),
         body: StateContainer(
-          child: CounterManager(),
+          child: TodosManager(),
         ),
       ),
     );
