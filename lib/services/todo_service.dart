@@ -8,7 +8,7 @@ class TodoService {
 
   addTodo(String data) {
     final List<String> newTodo = todos;
-    newTodo.add('hello');
+    newTodo.add(data);
     _todos.add(newTodo);
   }
 }
