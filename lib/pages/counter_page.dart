@@ -9,7 +9,7 @@ class CounterPage extends StatelessWidget {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('Manage Todos'),
+        title: Text('Click Counter'),
       ),
       body: CounterManager(),
     );
