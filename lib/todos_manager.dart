@@ -12,6 +12,7 @@ class TodosManager extends StatefulWidget {
 
 class _TodosManager extends State<TodosManager> {
   final TextEditingController _todosInputController = TextEditingController();
+  final FocusNode _todosInputFocusNode = FocusNode();
 
   @override
   void dispose() {
@@ -31,6 +32,7 @@ class _TodosManager extends State<TodosManager> {
             children: <Widget>[
               TextField(
                 controller: _todosInputController,
+                focusNode: _todosInputFocusNode,
                 decoration: InputDecoration(labelText: "New todo"),
               ),
               Container(
@@ -38,8 +40,28 @@ class _TodosManager extends State<TodosManager> {
                 width: double.infinity,
                 child: RaisedButton(
                   child: Text('Add todo'),
-                  onPressed: () =>
-                      todoService.addTodo(_todosInputController.text),
+                  onPressed: () {
+                    if (_todosInputController.text == '') {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Don\'t get to hurry!'),
+                            content: Text('You miss out the todo title'),
+                            actions: <Widget>[
+                              FlatButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: Text('Got it!'),
+                              )
+                            ],
+                          );
+                        },
+                      );
+                    }
+                    todoService.addTodo(_todosInputController.text);
+                    _todosInputController.text = '';
+                    _todosInputFocusNode.unfocus();
+                  },
                 ),
               ),
             ],
