@@ -57,10 +57,11 @@ class _TodosManager extends State<TodosManager> {
                           );
                         },
                       );
+                    } else {
+                      todoService.addTodo(_todosInputController.text);
+                      _todosInputController.text = '';
+                      _todosInputFocusNode.unfocus();
                     }
-                    todoService.addTodo(_todosInputController.text);
-                    _todosInputController.text = '';
-                    _todosInputFocusNode.unfocus();
                   },
                 ),
               ),
